@@ -22,7 +22,7 @@
 		  {% endfor %}
 		</select>
 		<h4><label for="credit">Credit Amount:</label></h4>
-		<input type="number" name="credit" max="{{name.credit}}" class="credit">
+		<input type="number" name="credit" max="{{name.credit}}" min="0" class="credit">
 		<button type="submit" class="btn btn-outline-success">Submit</button>
 		<a href="{% url 'viewpassbook' name.id %}" class="btn btn-primary">View Passbook</a>
 	</form>

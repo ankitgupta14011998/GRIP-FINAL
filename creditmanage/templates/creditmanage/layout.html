@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html xmlns:background-color="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="icon" type="image/png"  href="{% static 'creditmanage/logo3.png' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'creditmanage/layout.css' %}">
 </head>
@@ -24,7 +25,18 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item {{home}}"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+					<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Project
+                        </a>
+                        <div class="dropdown-menu" style="background-color: #dbd7d7" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Youtube Link</a>
+                          <a class="dropdown-item" href="#">Github Link</a>
+                          <a class="dropdown-item" href="#">LinkedIn Profile</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Drop a Mail</a>
+                        </div>
+                      </li>
 				</ul>
 				<ul class="navbar-nav ml-auto">
                 	<li class="nav-item">
