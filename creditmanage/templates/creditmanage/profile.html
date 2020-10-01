@@ -1,0 +1,31 @@
+{% extends 'creditmanage/layout.html' %}
+{% block title %}
+	{{name.name}}
+{% endblock %}
+{% block body %}
+{% if message %}
+	<div class="alert alert-success ml-4 mr-4 mt-4" role="alert">{{message}}</div>
+{% endif %}
+<div class="row justify-content-center mt-5">
+	<div class="col-lg-7 text-center">
+	<form method="POST">
+		{% csrf_token %}
+			<h2>{{name.name}}</h2>
+			<h4>Email:</h4>{{name.email}}
+			<h4>Credit:</h4>{{name.credit}}
+		<h4><label for="cars">Transact To:</label></h4>
+		<select name="trans" id="cars">
+			{% for person in people %}
+				{%if person != name %}
+					<option value="{{person.id}}">{{person}}</option>
+				{% endif %}
+		  {% endfor %}
+		</select>
+		<h4><label for="credit">Credit Amount:</label></h4>
+		<input type="number" name="credit" max="{{name.credit}}" class="credit">
+		<button type="submit" class="btn btn-outline-success">Submit</button>
+		<a href="{% url 'viewpassbook' name.id %}" class="btn btn-primary">View Passbook</a>
+	</form>
+	</div>
+</div>
+{% endblock %}

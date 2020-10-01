@@ -1,0 +1,31 @@
+{% extends 'creditmanage/layout.html' %}
+{% block title %}
+	Home
+{% endblock %}
+{% block body %}
+<div class="row justify-content-center mt-5 mb-5">
+	<div class="col-lg-7 text-center">
+		<a href="{% url 'users' %}" class="btn btn-success btn-lg m-2" >View Users</a>
+		<a href="{% url 'viewtransactions' %}" class="btn btn-success btn-lg m-2" >View Transactions</a>
+	</div>
+</div>
+	{% if user %}
+	<div class="alert alert-warning ml-4 mr-4">
+	Select User to initiate transaction
+	</div>
+	<div class="row">
+		{% for use in user %}
+		<div class="column">
+			<a href="{% url 'profile' use.id %}" class=" btn btn-outline-info btn-lg ml-4 test"><h3>{{use.name}}</h3></a>
+		</div>
+		{% endfor %}
+	</div>
+		{% else %}
+	<div class="row justify-content-center mt-5 mb-5">
+		<div class="col-lg-7 text-center">
+			<h5>The Credit Management app is used to perform basic transaction between users.
+			The Users can see the complete list of transaction as well as transaction done by a particular user.</h5>
+		</div>
+	</div>
+	{% endif %}
+{% endblock %}
